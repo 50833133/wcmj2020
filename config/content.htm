@@ -1,4 +1,20 @@
-<h1>網管</h1>
+<h1>About</h1>
+<p>.此內容管理系統以 <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 作為 submodule 運作, 可以選定對應的版本運作, cmsimde 可以持續改版, 不會影響之前設為 submodule, 使用舊版 cmsimde 模組的內容管理相關運作</p>
+<h4>利用 cmsimde 建立靜態網誌方法:</h4>
+<p>1. 在 github 建立倉儲, git clone 到近端.</p>
+<p>2. 參考 <a href="https://github.com/mdecourse/newcms">https://github.com/mdecourse/newcms</a>, 加入除了 cmsimde 目錄外的所有內容</p>
+<p>以 git submodule add <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> cmsimde</p>
+<p>建立 cmsimde 目錄, 並從 github 取下子模組內容.</p>
+<p>3.在近端維護時, 更換目錄到倉儲中的 cmsimde, 以 python wsgi.py 啟動近端網際伺服器.</p>
+<p>動態內容編輯完成後, 以 generate_pages 轉為靜態內容, 以 git add commit 及 push 將內容推到遠端.</p>
+<p>4. 之後若要以 git clone 取下包含 submodule 的所有內容, 執行:</p>
+<p>git clone --recurse-submodules<span> </span><a href="https://github.com/mdecourse/newcms.git">https://github.com/mdecourse/newcms.</a></p>
+<h1>Develop</h1>
+<p><a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 的開發, 可以在一個目錄中放入 cmsimde, 然後將 up_dir 中的內容放到與 cmsimde 目錄同位階的地方, 使用 command 進入 cmsimde 目錄, 執行 python wsgi.py, 就可以啟動, 以瀏覽器 https://localhost:9443 就可以連接, 以 admin 作為管理者密碼, 就可以登入維護內容.</p>
+<p>維護結束要將網站推至遠端可以使用 https協定以及 ssh協定進行連線,若在 IPv6的網路下要使用https協定連上 github必須使用 proxy才能進行連線, IPv4則不需要 proxy.若是在  IPv6的網路下要使用 ssh協定連上 github必須擁有 private key及 public key兩把鑰匙並且確定 putty的 proxy跟金鑰都是正確的再把 github轉為 ssh協定並綁定 ssh key, IPv4則不需要 proxy但仍需要 private key及 public key.</p>
+<p>cmsimde 的開發採用 Leo Editor, 開啟 cmsimde 目錄中的 cmsimde.leo 就可以進行程式修改, 結束後, 若要保留網際內容, 只要將 cmsimde 外部的內容倒回 up_dir 目錄中即可後續對 cmsimde 遠端倉儲進行改版.</p>
+<p>init.py 位於  up_dir 目錄, 可以設定e_ti sittle 與 uwsgi 等變數.</p>
+<h1>網管上課內容</h1>
 <h2>Week 2(3.13)</h2>
 <p>建網站</p>
 <p>此內容管理系統以 <a href="https://github.com/mdecourse/cmsimde">https:..github.com.mdecourse.cmsimde</a> 作為 submodule 運作, 可以選定對應的版本運作, cmsimde 可以持續改版, 不會影響之前設為 submodule, 使用舊版 cmsimde 模組的內容管理相關運作.</p>
@@ -62,7 +78,7 @@
 <p>PC 個人電腦</p>
 <p>Microcontroler 微控制器</p>
 <p>Mobile Phone 智慧型手機</p>
-<h2>w10-w11</h2>
+<h2>W10-W11</h2>
 <h4>以 SSH 維護倉儲</h4>
 <p>由於在電腦教室時採用純 IPv6 協定上網, 因此為了能夠在近端將倉儲改版資料推送到目前只接受 IPv4 協定連線的 github, 以下除了將原本以 https 對 github 連線, 改為以 ssh 協定連線外, 在 Windows 環境下必須利用 putty 與 plink, 設定 putty 格式的 .ppk 以及能夠同時支援 IPv4 與 IPv6 的代理主機.</p>
 <p>設定步驟如下:</p>
@@ -616,7 +632,7 @@
 </tr>
 </tbody>
 </table>
-<h1>W14</h1>
+<h2>Week 14</h2>
 <p>從<span> </span><a href="https://2019wcm.blogspot.com/2019/03/posted-via-python.html">https://2019wcm.blogspot.com/2019/03/posted-via-python.html</a> 取得Google Blogger Python API 程式, 修改後執行, 測試是否可以讀取設定的 client_secrets.json, 在各自的 Blogger ID 與 Post ID 中新增或修改網誌文章.</p>
 <p><a href="https://drive.google.com/open?id=13KBfWIMULL9fAPw-T54cExMt9GUTW4XZ">以 Blogger Python API 程式修改文章的教學影片</a><span> </span>(for @gm users only)</p>
 <hr/>
@@ -637,9 +653,15 @@
 <p>pip3 install <span> flask flask_cors lxml bs4 markdown pelican leo</span></p>
 <p>Mac OS X 操作系統</p>
 <p><span>與 Ubuntu 20.04 類似</span></p>
-<h1>W15-W18</h1>
+<h2>W15-W18</h2>
 <p>各分組除了必須將 W1-W14 週的所有上課內容, 以圖文及影音資料加以整理在個人及分組倉儲、網站及簡報外.</p>
 <p>可以自選另一主題, 將分組協同的過程與內容整理在個人與分組的倉儲資料中.</p>
-<p></p>
+<h1>電腦軟硬體簡介</h1>
+<p><span>電腦的設計採用「軟硬體分離」原則，就像錄音機一樣，硬體的功能固定，放入不同的錄音帶便能播放不同的樂曲；電腦系統也是如此，相同的硬體執行不同的軟體時就能發揮不同的功能。</span></p>
+<p><span>而硬體大致上有CPU,記憶體,硬碟,光碟機,讀卡機,滑鼠,鍵盤,螢幕,喇叭等</span></p>
+<p><span>硬體只是機器,真正能讓電腦能夠運作的東西稱為軟體</span></p>
+<p><span>而軟體上則大致有:作業系統,應用軟體等</span></p>
+<h1>網路架構與設定簡介</h1>
+<p><span>一般網路的架構可分為「防火牆」、「內部網路」、「外部網路」以及「DMZ 非軍事區（DMZ， DEMILITARIZED ZONE，以下簡稱 DMZ）」。</span></p>
 </div>
 </div>
